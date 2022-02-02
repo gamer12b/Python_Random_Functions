@@ -3,6 +3,8 @@ d = "first.dll"
 import subprocess
 import sys
 do = open(d, "r")
+
+#Packages to be installed
 packages = [
     "requests",
     "pytube",
@@ -28,9 +30,11 @@ if "0" in str(do.read()):
     do.close()
     time.sleep(2)
     for package in reversed(packages):
+        #Installing all packages in list
         print("Installing "+package)
         time.sleep(0.3)
         subprocess.check_call([sys.executable,"-m","pip","install",package])
+#Importing packages for functions
 import time
 import socket
 import uuid
@@ -54,9 +58,11 @@ import configparser
 
 from pytube import YouTube
 
+#Google translate
 def text_to_speech(text,language,name, slow):
     g = gtts.gTTS(text=text,lang=language,slow=slow, tld="com")
     g.save(name+".mp3")
+#Ookla speedtest
 def test_wifi():
     subprocess.check_call("speedtest-cli")
 def random_number(nm1, nm2):
