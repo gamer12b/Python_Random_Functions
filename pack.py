@@ -21,6 +21,8 @@ packages = [
     "nettools",
     "wifiinfo"
 ]
+
+
 import time
 if "0" in str(do.read()):
     do.close()
@@ -145,4 +147,12 @@ def rm_multiple(amount):
     n = n + 1
     os.remove(s)
     print("Successfully removed "+str(n) + " File(s)")
-
+def update_upgrade_linux(yon):
+  if yon == "y" or "Y":
+    print("answer=yes")
+    os.system("apt update")
+    os.system("apt upgrade -y")
+  if yon == "n" or "N":
+    print("answer=no")
+    os.system("apt update")
+    os.system("apt upgrade")    
